@@ -1,22 +1,28 @@
-# Crear un juego (utilizando Python) donde la computadora piense, o escoja un numero entre 1 y un limite,
-# y este limite solo puede ser 10, 100 o 1000, y nos da un numero limitado de veces para que nosotros adivinemos
-# el numero. La cantidad de intentos seran: 3, 5 y 8 para los limites 10, 100 y 1000 respectivamente.
-# Cuando le digamos un numero y este es menor que el numero que escogio la computadora, esta nos respondera
-# incorrecto, el numero que he pensado es mayor. Y viceversa.
-# Si lo adivinamos, en un numero menor o igual al numero de intentos, habremos ganado, de lo contrario habra 
-# ganado la computadora.
+
 
 import random
+from io import BytesIO
+import speech_recognition as sr
+from gtts import gTTS
+from pydub import AudioSegment
+from pydub.playback import play
+
+def convierte_a_audio(texto):
+    
+    tts = gTTS(texto, lang='es')
+    fp = BytesIO()
+    tts.write_to_fp(fp)
+    fp.seek(0)
+    audio_final = AudioSegment.from_file(fp, format="mp3")
+    return audio_final
 
 def devuelve_limite_superior():
-    # Funcion que devuelve cual sera el limite superior para la eleccion del numero aleatorio
     limite = 0
     while not limite in [10, 100, 1000]:
         limite = int(input('Ingrese el limite superior (10,100 o 1000): '))
     return limite
 
 def devuelve_limite_intentos(valor):
-    # Funcion que devuelve la cantidad de intentos que tendra el jugador para adivinar el numero, dependiendo del limite superior
     if valor == 10:
         return 3
     elif valor == 100:
@@ -25,11 +31,9 @@ def devuelve_limite_intentos(valor):
         return 9
 
 def devuelve_numero_aleatorio(limite):
-    # Funcion que devuelve un numero aleatorio entre 1 y el limite superior
     return random.randint(1, limite)
 
 def bienvenida():    
-    # Funcion que muestra un mensaje de bienvenida al jugador
     nombre = input('Hola, como te llamas? ')
     print(f'''
     Bienvenido {nombre} al Juego de Adivinar un numero
@@ -43,8 +47,10 @@ def bienvenida():
     pues adivina quien habra ganado.\n''')
 
 if __name__ == '__main__':
+    texto_ejemplo = 'Hola, como te llamas? '
+    audio_ejemplo = convierte_a_audio(texto_ejemplo)
+    play(audio_ejemplo)
     bienvenida()
-    # Variables a inicializar
     limite_superior = devuelve_limite_superior()
     limite_intentos = devuelve_limite_intentos(limite_superior)
     numero_pensado = devuelve_numero_aleatorio(limite_superior)
@@ -67,5 +73,3 @@ if __name__ == '__main__':
         else:
             print(f'GANASTE!. Acertaste en {cantidad_de_intentos} intentos')
             break
-
-
