@@ -1,6 +1,15 @@
-# Una empresa, que distribuye maíz y soja importado, recibe la mercancía en un puerto situado a 380 kilómetros de su casa matriz. El maíz se recibe en sacos o bolsas de 200 libras y la soja viene en sacos o bolsas de 100 libras. La empresa cuenta con una flota de dos camiones pequeños marca Chevrolet modelo NPR cuya capacidad de carga es 4782 Kg y seis camiones marca Mercedes Benz modelo 625CV de capacidad total de 13 toneladas.
+# Una empresa, que distribuye maíz y soja importado, recibe la mercancía en un 
+# puerto situado a 380 kilómetros de su casa matriz. El maíz se recibe en 
+# sacos o bolsas de 200 libras y la soja viene en sacos o bolsas de 100 libras. 
+# La empresa cuenta con una flota de dos camiones pequeños marca Chevrolet 
+# modelo NPR cuya capacidad de carga es 4782 Kg y seis camiones marca 
+# Mercedes Benz modelo 625CV de capacidad total de 13 toneladas.
 
-# Haga un programa en Python que cuando se le introduzca la cantidad de sacos recibidos, tanto de maíz como de soja sea capaz de calcular cuántos camiones serían necesarios enviar para retirar la mercancía del puerto. Adicionalmente, el director de la empresa exige terminantemente no sobrepasar la capacidad de carga de los camiones a más del 80 por ciento.
+# Haga un programa en Python que cuando se le introduzca la cantidad de sacos 
+# recibidos, tanto de maíz como de soja sea capaz de calcular cuántos camiones 
+# serían necesarios enviar para retirar la mercancía del puerto. 
+# Adicionalmente, el director de la empresa exige terminantemente no 
+# sobrepasar la capacidad de carga de los camiones a más del 80 por ciento.
 
 # 1 tonelada = 1000 Kg
 # 1 libra = 0.453592 Kg
