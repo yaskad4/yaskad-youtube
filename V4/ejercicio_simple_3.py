@@ -4,7 +4,7 @@ cadenaChar = input('Introduzca una cadena de texto: ')
 cadenaChar = cadenaChar.lower()
 largoCadena = len(cadenaChar)
 charA = cadenaChar.count('a')
-charAcentuadas = cadenaChar(á)
+charAcentuadas = cadenaChar.count('á')
 
 print('El largo de la cadena es: ',largoCadena)
 print('En la cadena hay ', charA, 'letras a')
